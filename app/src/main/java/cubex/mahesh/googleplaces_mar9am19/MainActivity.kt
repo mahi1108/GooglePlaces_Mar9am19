@@ -44,11 +44,9 @@ class MainActivity : AppCompatActivity() {
             1000L, 1f,
             object : LocationListener {
                 override fun onLocationChanged(loc: Location?) {
-                    tv_lati.setText("Latitude : "+loc?.latitude)
-                    tv_longi.setText("Longitude : "+loc?.longitude)
+                    tv_lati.setText(loc?.latitude.toString())
+                    tv_longi.setText(loc?.longitude.toString())
                     lManager.removeUpdates(this)
-
-
                 }
                 override fun onProviderEnabled(p0: String?) {
                 }
